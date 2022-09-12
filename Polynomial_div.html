@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type = "text/javascript">
+function syn_div(id_1,id_2,id_3){
+    let c;
+    let v = [];
+    let a =  document.getElementById(id_1).value;
+     a = a.split(" ");
+     
+    console.log(a);
+    console.log(a);
+    let b = Number(document.getElementById(id_2).value);
+    console.log(a);
+    let d;
+    let z = [];
+    let x;
+    x = 0;
+    for(let y of a){y = Number(y);
+        console.log(y)};
+for(let i of a){
+if (x == 0){
+    console.log(a[0]);
+    console.log(i);
+    c = Number(i);
+    console.log(c);
+    console.log(z); 
+    z.push(Number(c));
+    x+=1;
+    console.log(z);
+}
+else {
+d = Number(b * c);
+console.log(d);
+c = Number(i) + d;
+z.push(c);
+console.log(z);
+x+=1;
+};
+};
+z = z
+console.log(z);
+document.getElementById(id_3).append(z);
+
+                  
+}; 
+</script>
+</head>
+<body>
+    <div style = "text-align:center;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <label for=""><h1>Synthetic Division Calculator</h1></label>
+    <p1>Use a space to separate coefficients</p1>
+    <div><input id = "input_poly" type = "text" style = "width: 200px;height: 15px;" placeholder = "Type polynomial coefficients">
+    <input id = "input_ds" type = "text" style = "width: 200px;height: 15px;" placeholder = "Type divisor"></div>
+    <button  style = "height:50px;width:200px;" onclick = "syn_div('input_poly','input_ds','poly')">Calculate</button>
+    <p id = "poly">The new coefficients are </p></div>
+
+</body>
+     
+</html>
