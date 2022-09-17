@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script>
+    function long_div(id_1,id_2){
+        let e = [];
+        let y = 0;
+        let c = document.getElementById(id_1).value;
+        c = c.split(" ");
+        let a;
+        let f = document.getElementById(id_2).value;
+        f = f.split(" ");
+        let b;
+        let x;
+        let d = [];
+        let v = c.length;
+        let i = 0;
+        while(i < v){
+                b = Number(f[1]);
+                a = Number(f[0]);
+                console.log(a);
+                console.log(b);
+                x = (c[0]/a);
+                console.log(x);
+                d.push(x);
+                e = [c[0] - ( a * x ), c[1] - (b * x)];
+                console.log(e);
+                e.shift();
+                c = c.slice(2);
+                for(let g of c){e.push(g);};
+                console.log(c);
+                 console.log(e);
+                c = e;
+                console.log(d);
+                i += 1;
+        }
+document.getElementById('poly').append(d);
+    }
+</script>
+    </head>
+<body>
+    <div style = "text-align:center;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <label for=""><h1>Long Polynomial Division Calculator</h1></label>
+        <p1>Use a space to separate coefficients</p1>
+        <div><input id = "polynomial" type = "text" style = "width: 200px;height: 15px;" placeholder = "Type polynomial coefficients">
+        <input id = "divisor" type = "text" style = "width: 200px;height: 15px;" placeholder = "Type divisor"></div>
+        <button  style = "height:50px;width:200px;" onclick = "long_div('polynomial','divisor')">Calculate</button>
+        <p id = "poly">The new coefficients are </p></div>
+    
+</body>
+
+
+</html>
