@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+recursive_fib = (a,b,i,c,) => {
+if(i == c){document.getElementById('hello').innerHTML = "Term " +c+" of the Fibonnaci Sequence is " + b;
+    return(b);
+}
+else{
+    console.log("Iteration " + i + ": " + a + " + " + b + " = " + (a + b))
+    return recursive_fib(b, a + b, i + 1, c);
+}
+
+
+
+};
+
+
+// i is the iterator variable
+// c is the limiting iteration count
+// a is the first starting number in the fibonacci sequence
+// b is the second  number in the fibonacci sequence
+</script>
+<style>
+input {width:"70px"}
+
+</style>
+</head>
+<body>
+    <div style = "text-align: center;font-family: Arial, Helvetica, sans-serif;">
+        <h1>Fibonacci Sequence</h1>
+        <input id = 'i1' type = "number" placeholder = "Type the first number in the sequence">
+        <input id = 'i2' type = "number" placeholder = "Type the second number in the sequence"><br>
+        <input id = 'i3' type = "number" placeholder = "Type the first iteration value ">
+        <input id = 'i4' type = "number" placeholder = "Type the number of iterations to complete">
+<button style = "text-align: center;" onclick="recursive_fib(Number(document.getElementById('i1').value),Number(document.getElementById('i2').value),Number(document.getElementById('i3').value), Number(document.getElementById('i4').value));">Calculate</button>
+<p id = "hello"></p>
+    </div>
+</body>
+
+</html>
